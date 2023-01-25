@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GameContext } from '../context/GameContext.js';
 import Card from './Card';
 
-export default function CardList({ cards, setSelectedCard, player, setFrom, selectedCard }) {
+export default function CardList({ setSelectedCard, player, setFrom, selectedCard }) {
+  const { deck } = useContext(GameContext);
   return (
     <div className="card-list">
-      {cards.map((card) => (
+      {deck.map((card) => (
         <Card
           key={card.suit + card.value}
           setSelectedCard={setSelectedCard}

@@ -7,7 +7,6 @@ import { GameContext } from './context/GameContext.js';
 
 function App() {
   const {
-    deck,
     selectedCard,
     setSelectedCard,
     playerOneHand,
@@ -51,7 +50,6 @@ function App() {
           setSelectedCard={setSelectedCard}
         />
         <CardList
-          cards={deck}
           selectedCard={selectedCard}
           setSelectedCard={setSelectedCard}
           setFrom={setFrom}
