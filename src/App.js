@@ -6,20 +6,10 @@ import { useContext } from 'react';
 import { GameContext } from './context/GameContext.js';
 
 function App() {
-  const {
-    selectedCard,
-    setSelectedCard,
-    playerOneHand,
-    playerTwoHand,
-    playerThreeHand,
-    from,
-    setFrom,
-    to,
-    setTo,
-    passCard,
-  } = useContext(GameContext); // Refactor Me!!!
+  const { playerOneHand, playerTwoHand, playerThreeHand, from, setFrom, to, setTo, passCard } =
+    useContext(GameContext); // Refactor Me!!!
 
-  const { deck } = useContext(GameContext); // Don't Refactor Me!!!
+  const { selectedCard, deck } = useContext(GameContext); // Don't Refactor Me!!!
   return (
     <div className="App">
       <section>
@@ -31,7 +21,6 @@ function App() {
           setFrom={setFrom}
           selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
@@ -40,7 +29,6 @@ function App() {
           setFrom={setFrom}
           selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
         />
         <Player
           to={to}
@@ -49,15 +37,8 @@ function App() {
           setFrom={setFrom}
           selectedCard={selectedCard}
           setTo={setTo}
-          setSelectedCard={setSelectedCard}
         />
-        <CardList
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
-          setFrom={setFrom}
-          player={'deck'}
-          cards={deck}
-        />
+        <CardList selectedCard={selectedCard} setFrom={setFrom} player={'deck'} cards={deck} />
       </section>
       <section>
         {selectedCard && (
@@ -67,7 +48,6 @@ function App() {
             from={from}
             to={to}
             selectedCard={selectedCard}
-            setSelectedCard={setSelectedCard}
           />
         )}
       </section>
