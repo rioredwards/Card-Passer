@@ -17,7 +17,9 @@ function App() {
     to,
     setTo,
     passCard,
-  } = useContext(GameContext);
+  } = useContext(GameContext); // Refactor Me!!!
+
+  const { deck } = useContext(GameContext); // Don't Refactor Me!!!
   return (
     <div className="App">
       <section>
@@ -54,6 +56,7 @@ function App() {
           setSelectedCard={setSelectedCard}
           setFrom={setFrom}
           player={'deck'}
+          cards={deck}
         />
       </section>
       <section>
