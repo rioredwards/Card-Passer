@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { GameContext } from '../context/GameContext.js';
 import Card from './Card';
 
-export default function ExecutePassButton({ passCard, setFrom, from, to }) {
-  const { selectedCard } = useContext(GameContext);
+export default function ExecutePassButton({ passCard }) {
+  const { selectedCard, from, to } = useContext(GameContext);
   return (
     <div className="execute-button" onClick={() => passCard(selectedCard)}>
-      Pass <Card setFrom={setFrom} /> from {from} to {to}
+      Pass <Card card={selectedCard} /> from {from} to {to}
     </div>
   );
 }
